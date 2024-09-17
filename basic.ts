@@ -16,3 +16,10 @@ console.log(user.name);
 
 //Typescript will throw error during time of development and don't run the code  which will prevent runtime errors
 //But javascript will run the code and which will cause runtime errors
+
+
+function welcome(person: string, date: Date) {
+    console.log(`hey ${person}, today is ${date.toDateString()}!`);
+  }
+
+welcome("alex" , new Date());
