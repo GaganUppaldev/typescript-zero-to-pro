@@ -26,6 +26,7 @@ console.log(object.a) //this code will run on both if we have NoimplementAny opt
 //here you will see the diffrence 
 function greet(name:string){   //here you can use string and then no number will be expeted in function
   console.log("welcome" + name);
+  console.log("converted to uppercase  " + name.toUpperCase() + "  !|")//added this to show example of function in ts
 }
 greet("developer"); //use any if you want to send numbers or other types also
 //if option was true means you can go without defining anything like :string , :any but now we need to do that because option is false and any is active
