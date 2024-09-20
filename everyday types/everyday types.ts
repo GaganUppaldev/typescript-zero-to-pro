@@ -128,7 +128,7 @@ greet0(["lol","call","pall"]);//here this is a string input
 greet0("james")//simple string in input
 
 //Aliases
-
+//Type aliases 
 
 type Point = { //type is used
   x: number;
@@ -169,3 +169,46 @@ console.log(userInput); // Outputs: "hello world"
 // Re-assigning with a new string
 userInput = "new input";
 console.log(userInput); // Outputs: "new input"
+
+//interface 
+// another way to name type of object
+
+
+interface Point0 { //interface used here instead of type
+  x: number;
+  y: number;
+}
+ 
+function printCo(pt: Point) {
+  console.log("The coordinate's x value is " + pt.x);
+  console.log("The coordinate's y value is " + pt.y);
+}
+ 
+printCo({ x: 25, y: 30 });
+
+//difference between Type aliases and interfaces
+//main differnce is that a type cannot be re-opened to add new properties vs an interface which is always extendable
+type User = {
+  name: string;
+  age: number;
+};
+
+// This will cause an error because you cannot reopen a type alias
+// type User = {
+//   email: string;
+// };
+interface User0 {
+  name: string;
+  age: number;
+}
+
+// Extending an interface
+interface User0 {
+  email: string;
+}
+
+const user: User0 = {
+  name: "John",
+  age: 30,
+  email: "john@example.com"
+};
