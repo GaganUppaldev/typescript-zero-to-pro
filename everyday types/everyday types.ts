@@ -1,4 +1,4 @@
-//Any 
+ //Any 
 //meaning of any is very similar to its real life meaning 
 //It let variable to have any value without defining them
 
@@ -30,3 +30,36 @@ function greet(name:string){   //here you can use string and then no number will
 }
 greet("developer"); //use any if you want to send numbers or other types also
 //if option was true means you can go without defining anything like :string , :any but now we need to do that because option is false and any is active
+
+//return type
+function test1():number{
+  return 24;   //if you will try to return any things else than number typescript will throw error
+}
+
+test1(); //this is just calling function
+console.log(test1()); //print value retuned by function in terminal
+
+function test2(){
+  
+  return 24 + ("abc");
+
+}
+console.log(test2());
+
+
+
+async function outt(): Promise<number> {
+  return 26;
+}
+console.log(outt());
+
+
+const names = ["alexa" , "siri" ,"jarves"];
+//Anonymus function
+names.forEach(function (s){
+  console.log(s.toUpperCase());
+})
+//arrow function
+names.forEach((s=>{
+  console.log(s.toUpperCase());
+})) 
