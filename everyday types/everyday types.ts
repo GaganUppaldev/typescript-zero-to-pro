@@ -102,3 +102,28 @@ union(31);
 union('c');
 union({ id : 243});
 
+//take example of property toUppercase that we can only use in string not numbers so it will throw error so we will use if and else
+
+function eg(x:string|number){
+  if(typeof x == "string"){
+   console.log(x.toUpperCase());
+  }
+  else{
+    console.log(x);
+  }
+}
+eg("example");
+eg(12);
+
+function greet0(x: string[] | string) {
+  if (Array.isArray(x)) {
+    // Here: 'x' is 'string[]'
+    console.log("Hello, " + x.join(" and "));
+  } else {
+    // Here: 'x' is 'string'
+    console.log("Welcome lone traveler " + x);
+  }
+}
+greet0(["lol","call","pall"]);//here this is a string input
+greet0("james")//simple string in input
+
