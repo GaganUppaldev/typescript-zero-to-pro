@@ -90,7 +90,15 @@ function printnamehere(obj :{x:string , y?:string} ){ //here while calling funct
   if(obj.y !== undefined){
     console.log(obj.y.toUpperCase());
   }
-  
-
 }
 printnamehere({ x:"smart",y:"programmer"})
+
+//union type is | 
+//used to allow variable to accept multiple values 
+function union(x:number|string|object){ //means x variable can accept number , string and object also
+  console.log(x);
+}
+union(31);
+union('c');
+union({ id : 243});
+
