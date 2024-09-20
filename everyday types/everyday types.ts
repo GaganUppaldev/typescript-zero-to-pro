@@ -1,4 +1,4 @@
- //Any 
+//Any 
 //meaning of any is very similar to its real life meaning 
 //It let variable to have any value without defining them
 
@@ -71,3 +71,26 @@ function obj(pt :{x:number,y:number} , ct :{z:number,y:number}){   //here is obj
 }
 
 obj({x:2,y:2},{z:40,y:40}); //sending values inside object pt and ct
+
+//optional properties
+function printname(x:string , y?:string ){ //here while calling function  x is compulsary while y is optional
+  console.log(x);
+  console.log(x+"&"+y);
+  
+
+}
+printname("yes","sir");
+printname("no sir") //it can only with this and show undefined
+//this can't be called with only y because it is optional 
+
+//optional properties
+function printnamehere(obj :{x:string , y?:string} ){ //here while calling function  x is compulsary while y is optional
+  console.log(obj.x);
+  console.log(obj.x+"&"+obj.y);
+  if(obj.y !== undefined){
+    console.log(obj.y.toUpperCase());
+  }
+  
+
+}
+printnamehere({ x:"smart",y:"programmer"})
