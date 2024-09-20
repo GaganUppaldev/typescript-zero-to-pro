@@ -63,3 +63,11 @@ names.forEach(function (s){
 names.forEach((s=>{
   console.log(s.toUpperCase());
 })) 
+
+//object type
+function obj(pt :{x:number,y:number} , ct :{z:number,y:number}){   //here is object named pt  and ct
+  console.log("sum of ", pt.x ,"and",pt.y,"is",pt.x+pt.y);
+  console.log("sum of ", ct.z ,"and",ct.y,"is",ct.z+ct.y);
+}
+
+obj({x:2,y:2},{z:40,y:40}); //sending values inside object pt and ct
