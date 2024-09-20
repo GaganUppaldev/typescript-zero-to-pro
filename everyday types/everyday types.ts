@@ -118,7 +118,7 @@ eg(12);
 function greet0(x: string[] | string) {
   if (Array.isArray(x)) {
     // Here: 'x' is 'string[]'
-    console.log("Hello, " + x.join(" and "));
+    console.log("Hello, " + x.join(" and ")); 
   } else {
     // Here: 'x' is 'string'
     console.log("Welcome lone traveler " + x);
@@ -127,3 +127,45 @@ function greet0(x: string[] | string) {
 greet0(["lol","call","pall"]);//here this is a string input
 greet0("james")//simple string in input
 
+//Aliases
+
+
+type Point = { //type is used
+  x: number;
+  y: number;
+};
+ 
+// Exactly the same as the earlier example
+function printCoord(pt: Point) {
+  console.log("The coordinate's x value is " + pt.x);
+  console.log("The coordinate's y value is " + pt.y);
+}
+ 
+printCoord({ x: 100, y: 100 });
+
+type data = {
+  x:number|string;
+}
+
+function print1(d :data){
+  console.log(d.x+ " ||| type |||")
+}
+print1({x:"import topic is "});
+
+type UserInputSanitizedString = string;
+
+function sanitize(str: string): string {
+  // Example sanitize function
+  return str.trim().toLowerCase();
+}
+
+function sanitizeInput(str: string): UserInputSanitizedString {
+  return sanitize(str);
+}
+
+let userInput = sanitizeInput("  Hello World!  ");
+console.log(userInput); // Outputs: "hello world"
+
+// Re-assigning with a new string
+userInput = "new input";
+console.log(userInput); // Outputs: "new input"
