@@ -21,3 +21,21 @@ function start(a: number | string | object, b: number) {
 start({ key: 10 }, 2); // Corrected object declaration
 start("lol",1);
 start(1,2);
+
+//Truthiness narrowing 
+//$,||,$$ etc
+function getusers(user: string) {
+    // Check if 'user' is truthy
+    if (user) {
+        // If 'user' is truthy, log the user's name
+        console.log(`user found and its name is ${user}`);
+        // Return the user ID
+        return `user id is ${user}`; // Using backticks (`) for template literals, not single quotes (')
+    } else {
+        // If 'user' is falsy, log that the user is not found
+        console.log("user not found");
+    }
+}
+
+// Call the function with a truthy value
+getusers("alexa");
