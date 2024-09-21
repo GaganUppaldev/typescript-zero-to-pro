@@ -39,3 +39,49 @@ function getusers(user: string) {
 
 // Call the function with a truthy value
 getusers("alexa");
+
+/*In JavaScript, when you use conditions in constructs like if, JavaScript automatically converts (or “coerces”) 
+the condition to a boolean value (true or false). This helps JavaScript decide which branch of code to execute.
+*/
+//some values are false like 0,NaN (Not-a-Number) ,"" (empty string),0n(bigint zero),null,undefined
+//All other values are considered truthy, meaning they convert to true when coerced.
+
+Boolean(0); // false
+Boolean("hello"); // true
+
+function printAll(strs: string | string[] | null) {
+    // Check if 'strs' is an array of strings
+    if (strs && typeof strs === "object") {
+        for (const s of strs) {
+            console.log(s);
+        }
+    } 
+    // Check if 'strs' is a single string
+    else if (typeof strs === "string") {
+        console.log(strs);
+    } 
+    // Handle the case where 'strs' is null
+    else {
+        console.log("No strings to print");
+    }
+}
+
+printAll(["hello", "world"]); // Prints each string in the array
+printAll("hello"); // Prints the single string
+printAll(null); // Prints "No strings to print"
+
+
+function multiplyAll(
+    values: number[] | undefined,
+    factor: number
+  ): number[] | undefined {
+    if (!values) {
+      return values;
+    } else {
+      return values.map((x) => x * factor);
+    }
+  }
+
+
+console.log(multiplyAll([1, 2, 3], 2)); // Output: [2, 4, 6]
+console.log(multiplyAll(undefined, 2)); // Output: undefined
