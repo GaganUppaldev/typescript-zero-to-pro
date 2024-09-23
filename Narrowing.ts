@@ -86,22 +86,27 @@ function multiplyAll(
 console.log(multiplyAll([1, 2, 3], 2)); // Output: [2, 4, 6]
 console.log(multiplyAll(undefined, 2)); // Output: undefined
 
-//equality narrowing
-function example(x: string | number, y: string | boolean) {
-  if (x === y) {
-    // We can now call any 'string' method on 'x' or 'y'.
-    x.toUpperCase();
-          
-(method) String.toUpperCase(): string
-    y.toLowerCase();
-          
-(method) String.toLowerCase(): string
-  } else {
-    console.log(x);
-               
-(parameter) x: string | number
-    console.log(y);
-               
-(parameter) y: string | boolean
-  }
+//Equality narrowing
+function example2(x:string|number , y:string|boolean){
+    if(x==y){
+        console.log(x.toUpperCase());
+        console.log(y.toUpperCase());
+    }else{
+        console.log(x);
+        console.log(y);
+    }
+
+}
+example2("name","test");
+
+type fish = {swim:() => void};
+type bird = {fly:() => void};
+
+function move(animal: fish | bird){
+    if("swim" in animal){
+        return animal.swim();
+    
+    }else{
+        return animal.fly();
+    }
 }
