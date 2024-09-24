@@ -99,6 +99,7 @@ function example2(x:string|number , y:string|boolean){
 }
 example2("name","test");
 
+//in operator in narrowing
 type fish = { swim: () => void};
 type bird = { fly: () => void};
 
@@ -121,3 +122,33 @@ const goldfish: fish = {
 
 move(eagle);
 move(goldfish);
+
+type bird0 = { fly: () => void };
+type fish0 = { swim: () => void };
+type human = { swim?: () => void, fly?: () => void };
+
+function test(animal: bird0 | fish0 | human): void {
+    if ("swim" in animal && animal.swim) {
+        animal.swim();
+    }
+    if ("fly" in animal && animal.fly) {
+        animal.fly();
+    }
+}
+
+const jelly: fish0 = {
+    swim: () => console.log("it is a fish")
+};
+
+const vulture: bird0 = {
+    fly: () => console.log("it is a bloody bird")
+};
+
+const tony: human = {
+    fly: () => console.log("it is a human so it can fly"),
+    swim: () => console.log("it is a human so it can swim")
+};
+
+test(jelly); 
+test(vulture); 
+test(tony); 
