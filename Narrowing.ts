@@ -152,3 +152,14 @@ const tony: human = {
 test(jelly); 
 test(vulture); 
 test(tony); 
+
+//instance of 
+function logvalue(x:string|Date){
+    if(x instanceof Date){
+        console.log(x.toUTCString());
+    }else{
+        console.log(x.toUpperCase());
+    }
+}
+logvalue("testing")
+logvalue(new Date()); //current date is output 
