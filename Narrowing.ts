@@ -163,3 +163,15 @@ function logvalue(x:string|Date){
 }
 logvalue("testing")
 logvalue(new Date()); //current date is output 
+
+//assignments
+let x = Math.random() < 0.5 ? 10 : "hello world";
+//here code genrate a random number between 0 and 1 , if value is less than 0.5 than x will assigned value 10 a number
+//and if greater than x will be assigned the value "hello world " which is a string
+x = 1;
+
+console.log(x );
+
+x = "goodbye!";
+ 
+console.log(x);
