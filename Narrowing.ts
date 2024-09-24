@@ -99,14 +99,25 @@ function example2(x:string|number , y:string|boolean){
 }
 example2("name","test");
 
-type fish = {swim:() => void};
-type bird = {fly:() => void};
+type fish = { swim: () => void};
+type bird = { fly: () => void};
 
-function move(animal: fish | bird){
-    if("swim" in animal){
+function move(animal : fish | bird){
+    if ("swim" in animal){
         return animal.swim();
-    
-    }else{
+    }
+    else{
         return animal.fly();
     }
 }
+
+const goldfish: fish = {
+    swim: () => console.log("The fish is swimming")
+  };
+  
+  const eagle: bird = {
+    fly: () => console.log("The bird is flying")
+};
+
+move(eagle);
+move(goldfish);
