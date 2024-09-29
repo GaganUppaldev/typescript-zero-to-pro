@@ -175,3 +175,13 @@ console.log(x );
 x = "goodbye!";
  
 console.log(x);
+
+//Control flow analysis
+function padLeft(padding: number | string, input: string) {
+  if (typeof padding === "number") {
+    console.log(input);
+  }
+  console.log(padding + input);
+}
+
+padLeft(1,"lol");
