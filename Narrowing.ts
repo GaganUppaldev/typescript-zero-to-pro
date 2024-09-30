@@ -185,3 +185,12 @@ function padLeft(padding: number | string, input: string) {
 }
 
 padLeft(1,"lol");
+
+// Both calls to 'swim' and 'fly' are now okay.
+let pet = getSmallPet();
+ 
+if (isFish(pet)) {
+  pet.swim();
+} else {
+  pet.fly();
+}
